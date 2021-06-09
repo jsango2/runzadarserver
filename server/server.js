@@ -1,3 +1,4 @@
+const path = require('path');
 const bodyParser = require('body-parser');
 const express = require('express');
 var cors = require('cors');
@@ -31,6 +32,10 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
+app.get('/get', (req, res) => {
+	res.send('Hello World!');
+});
+
 // send mail with defined transport object
 app.post('/contact', function (req, res) {
 	//   res.sendStatus(200)
@@ -49,4 +54,4 @@ app.post('/contact', function (req, res) {
 	);
 });
 
-app.listen(3001, () => console.log(`Started server at http://localhost:3001!`));
+app.listen(5000, () => console.log(`Started server at http://localhost:5000!`));
