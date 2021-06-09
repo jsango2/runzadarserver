@@ -27,6 +27,9 @@ const transporter = nodemailer.createTransport({
 		pass: 'Burek123456!', // generated ethereal password
 	},
 });
+app.get('/get', function (req, res) {
+	res.send('Hello World!');
+});
 
 // send mail with defined transport object
 app.post('/contact', function (req, res) {
@@ -46,4 +49,4 @@ app.post('/contact', function (req, res) {
 	);
 });
 
-app.listen(8000, () => console.log(`Started server at http://localhost:8000!`));
+app.listen(3001, () => console.log(`Started server at http://localhost:3001!`));
