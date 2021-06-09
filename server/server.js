@@ -32,10 +32,6 @@ const transporter = nodemailer.createTransport({
 	},
 });
 
-app.get('/get', (req, res) => {
-	res.send('Hello World!');
-});
-
 // send mail with defined transport object
 app.post('/contact', function (req, res) {
 	//   res.sendStatus(200)
