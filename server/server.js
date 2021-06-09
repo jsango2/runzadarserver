@@ -31,7 +31,9 @@ const transporter = nodemailer.createTransport({
 		pass: 'Burek123456!', // generated ethereal password
 	},
 });
-
+app.get('/hello', (req, res) => {
+	res.send('Hello World!');
+});
 // send mail with defined transport object
 app.post('/contact', function (req, res) {
 	//   res.sendStatus(200)
