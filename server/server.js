@@ -4,11 +4,14 @@ var cors = require('cors');
 const nodemailer = require('nodemailer');
 
 const app = express();
+
 app.use(
 	bodyParser.urlencoded({
 		extended: true,
 	})
 );
+const buildPath = path.join(__dirname, '..', 'build');
+app.use(express.static(buildPath));
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -26,9 +29,6 @@ const transporter = nodemailer.createTransport({
 		user: 'info@zadarnight.run', // generated ethereal user
 		pass: 'Burek123456!', // generated ethereal password
 	},
-});
-app.get('/get', function (req, res) {
-	res.send('Hello World!');
 });
 
 // send mail with defined transport object
