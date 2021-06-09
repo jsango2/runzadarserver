@@ -5,6 +5,7 @@ var cors = require('cors');
 const nodemailer = require('nodemailer');
 
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 app.use(
 	bodyParser.urlencoded({
@@ -52,4 +53,4 @@ app.post('/contact', function (req, res) {
 	);
 });
 
-app.listen(5000, () => console.log(`Started server at http://localhost:5000!`));
+app.listen(PORT, () => console.log(`Started server at http://localhost:5000!`));
