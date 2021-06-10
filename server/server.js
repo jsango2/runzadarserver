@@ -41,14 +41,14 @@ app.post('/send', (req, res) => {
 		const mailOptions = {
 			from: req.body.email,
 			to: contactAddress,
-			subject: req.body.subject,
+			subject: 'Zaboravljena Dalmacija Kontakt forma',
 			html: `
-			  <p>You have a new message from ${req.body.ime}.</p>
+			  <p>Imate novu poruku od ${req.body.Ime}.</p>
 			  <h4>Contact Details:</h4>
 			  <ul>
-				  <li>Name: ${req.body.ime}</li>
+				  <li>Ime pošiljatelja: ${req.body.Ime}</li>
 				  <li>Email: ${req.body.email}</li>
-				  <li>Message: ${req.body.poruka}</li>
+				  <li>Poruka: ${req.body.poruka}</li>
 			  </ul>
 			  `,
 		};
