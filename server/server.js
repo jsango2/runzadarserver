@@ -47,7 +47,7 @@ app.post('/send', (req, res) => {
 			  <h4>Contact Details:</h4>
 			  <ul>
 				  <li>Ime pošiljatelja: ${req.body.Ime}</li>
-				  <li>Email: ${req.body.email}</li>
+				  <li>Email: ${req.body.mail}</li>
 				  <li>Poruka: ${req.body.poruka}</li>
 			  </ul>
 			  `,
