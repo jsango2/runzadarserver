@@ -15,7 +15,7 @@ app.use(
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.static(buildPath));
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 const contactAddress = 'info@zadarnight.run';
 // Generate test SMTP service account from ethereal.email
@@ -33,8 +33,8 @@ const transporter = nodemailer.createTransport({
 	},
 });
 app.get('/get', (req, res) => {
-	res.send('hello world')
-}
+	res.send('hello world');
+});
 // send mail with defined transport object
 app.post('/send', (req, res) => {
 	try {
