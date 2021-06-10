@@ -1,17 +1,17 @@
 const path = require('path');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const express = require('express');
 var cors = require('cors');
 const nodemailer = require('nodemailer');
-
+require('dotenv').config();
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
-app.use(
-	bodyParser.urlencoded({
-		extended: true,
-	})
-);
+// app.use(
+// 	bodyParser.urlencoded({
+// 		extended: true,
+// 	})
+// );
 const buildPath = path.join(__dirname, '..', 'build');
 app.use(express.static(buildPath));
 app.use(cors());
@@ -75,4 +75,4 @@ app.post('/send', (req, res) => {
 	}
 });
 
-app.listen(PORT, () => console.log(`Started server at http://localhost:5000!`));
+app.listen(PORT, () => console.log(`Started server at port ${PORT}`));
