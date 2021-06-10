@@ -32,13 +32,15 @@ const transporter = nodemailer.createTransport({
 		pass: process.env.PASS, // generated ethereal password
 	},
 });
-
+app.get('/get', (req, res) => {
+	res.send('hello world')
+}
 // send mail with defined transport object
 app.post('/send', (req, res) => {
 	try {
 		const mailOptions = {
 			from: req.body.email,
-			to: process.env.email,
+			to: contactAddress,
 			subject: req.body.subject,
 			html: `
 			  <p>You have a new message from ${req.body.ime}.</p>
