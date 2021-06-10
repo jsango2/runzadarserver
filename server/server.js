@@ -43,8 +43,9 @@ app.post('/send', (req, res) => {
 			to: contactAddress,
 			subject: 'Zaboravljena Dalmacija Kontakt forma',
 			html: `
+			<h3>ZaboravljenaDalmacija.hr</h3>
 			  <p>Imate novu poruku od ${req.body.Ime}.</p>
-			  <h4>Contact Details:</h4>
+			  <h4>Detalji kontakta:</h4>
 			  <ul>
 				  <li>Ime pošiljatelja: ${req.body.Ime}</li>
 				  <li>Email: ${req.body.mail}</li>
