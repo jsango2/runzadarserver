@@ -38,7 +38,7 @@ app.post("/send", (req, res) => {
   try {
     const mailOptions = {
       from: req.body.email,
-      to: contactAddress,
+      to: "RunZadar.com",
       subject: "RunZadar Prijava via Kontakt forma",
       html: `
 			<h3>RunZadar.com</h3>
