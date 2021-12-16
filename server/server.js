@@ -17,7 +17,7 @@ app.use(express.static(buildPath));
 app.use(cors());
 app.use(express.json());
 
-const contactAddress = "info@zaboravljenadalmacija.hr";
+const contactAddress = "info@runzadar.com";
 // Generate test SMTP service account from ethereal.email
 // Only needed if you don't have a real mail account for testing
 // let testAccount = await nodemailer.createTestAccount();
@@ -44,13 +44,13 @@ app.post("/send", (req, res) => {
       subject: "RunZadar Prijava via Kontakt forma",
       html: `
 			<h3>RunZadar.com</h3>
-			  <p>Imate novu poruku od ${req.body.Ime}.</p>
+			  <p>Imate novu poruku od ${req.body.ime}.</p>
 			  <h4>Detalji kontakta:</h4>
 			  <ul>
-				  <li>Ime pošiljatelja: ${req.body.Ime}</li>
-				  <li>Prezime: ${req.body.Prezime}</li>
-				  <li>Datum: ${req.body.Datum}</li>
-				  <li>Email: ${req.body.Email}</li>
+				  <li>Ime pošiljatelja: ${req.body.ime}</li>
+				  <li>Prezime: ${req.body.prezime}</li>
+				  <li>Datum: ${req.body.datum}</li>
+				  <li>Email: ${req.body.email}</li>
 			  </ul>
 			  `,
     };
